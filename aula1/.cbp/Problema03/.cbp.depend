@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1518372291 source:c:\users\lancemaker\documents\github\tecnicasdeprogramacao\aula1\.cbp\problema03\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
