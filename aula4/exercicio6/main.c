@@ -1,34 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int main()
+void main()
 {
-    char s[100];
-    char temp[100];
+    char s[200];
+    char temp[200];
     int i=0;
-    int j=0;
-    int ultimoEspaco=0;
-    int contaA=0;
-
-    printf("digite uma frase\n");
+    int aCount=0;
+    int lastSpace=0;
+    printf("digite uma frase:\n");
     gets(s);
-
-    for(i =0;i<strlen(s);i++){
-        if(s[i]=='a'||s[i]=='A'){
-        ++contaA;
-        }
-        if(s[i]==' '){
-            if(contaA>=2){
-            for(j = ultimoEspaco;j<i;j++){
-            temp[j]=s[j];
-            }
-            contaA=0;
-            ultimoEspaco = i+1;
+    int j=0;
+    int k=0;
+    printf("%d\n",strlen(s));
+    while(i<strlen(s)+1){
+        if((s[i]!=' ') && (s[i]!='\0')){
+            if(s[i]=='a'||s[i]=='A'){
+                aCount++;
             }
         }
-
+        else{
+            printf("%d\n",aCount);
+            if(aCount>1){
+             for(j=lastSpace;j<i;j++){
+                temp[k]=s[j];
+                k++;
+             }
+            }
+            aCount=0;
+            lastSpace=i;
+        }
+        i++;
     }
-    s[i+1]='\0';
-    printf("frase : %d\n",i);
-    printf("frase : %s\n",temp);
+    temp[k+1]='\0';
+    printf("%s",temp);
 }
