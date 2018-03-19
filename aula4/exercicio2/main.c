@@ -8,6 +8,7 @@ int main()
     int i = 0;
     printf("digite uma string:");
     scanf("%s",str);
+    fflush(stdin);
     printf("digite um char:");
     scanf("%c",&c);
     for(int i=0;i<15;i++){
